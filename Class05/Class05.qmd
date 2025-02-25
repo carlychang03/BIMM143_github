@@ -1,0 +1,169 @@
+---
+title: "Class 5: Data Viz with ggplot"
+author: "Carly Chang (PID A16843962)"
+format: pdf
+---
+
+## Intro to ggplot
+> Q1. For which phases is data visualization important in our scientific workflows? 
+
+Communication of results, exploratory data analysis (EDA), detection of outliers
+
+> Q2. True or False? The ggplot2 package comes already installed with R? 
+
+FALSE
+
+There are many graphics systems in R (ways to make plots and figures). These include "base" R plots. Today, we will focuse mostly of theh **ggplot2** package.
+Let's start with a plot of a simple in-built dataset called `cars`.
+
+```{r}
+cars
+```
+
+```{r}
+plot(cars)
+```
+> Q. Which plot types are typically NOT used to compare distributions of numeric variables? 
+
+Network graphs
+
+> Q. Which statement about data visualization with ggplot2 is incorrect?
+
+ggplot2 is the only way to create plots in R
+
+Let's see how we can make this figure using **ggplot**. First we need to install this package on our computer. To install any R package, we use the function `install.packages()`.
+
+> I will run `install.packages("ggplot2")` in my R console, not this quarto document to avoid installing it every time I run the document.
+
+Before we can use any functions from add on packages, we need to load the package from our "library()" with the `libary(ggplot2)` function
+
+```{r}
+library(ggplot2)
+ggplot(cars)
+```
+
+All ggplot figures have 3 layers: 
+
+- **data** (the input dataset I want to plot from)
+- **aes** (the aesthetic mapping of the data to my plot, such as x-y axis, line type, etc.)
+- **geometry** (the type of plot, such as geom_point(), geom_line(), etc.)
+
+```{r}
+ggplot(cars) +
+  aes(x=speed, y=dist) +
+  geom_point()
+```
+
+Let's add a fitted line to show the relationship here:
+
+```{r}
+ggplot(cars) +
+  aes(x=speed, y=dist) +
+  geom_point() +
+  geom_smooth(method = "lm") + #makes a linear fitted line
+  theme_bw() + #makes figure black and white
+  labs(title="My first ggplot") #makes a title
+```
+
+> Q. Which geometric layer should be used to create scatter plots in ggplot2? 
+
+geom_point()
+
+## Gene expression figure
+
+The code to read the dataset:
+
+```{r}
+url <- "https://bioboot.github.io/bimm143_S20/class-material/up_down_expression.txt"
+genes <- read.delim(url)
+head(genes) #only shows the first 6 rows
+```
+
+> Q. How many genes are in this dataset?
+
+```{r}
+nrow(genes)
+```
+> Q. Use the colnames() function and the ncol() function on the genes data frame to find out what the column names are (we will need these later) and how many columns there are. How many columns did you find?
+
+```{r}
+colnames(genes)
+ncol(genes)
+```
+
+
+> Q. Use the table() function on the State column of this data.frame to find out how many ‘up’ regulated genes there are. What is your answer? 
+
+```{r}
+table(genes$State)
+```
+
+> Q. Using your values above and 2 significant figures. What fraction of total genes is up-regulated in this dataset? 
+
+```{r}
+round(table(genes$State)/nrow(genes), 4)
+```
+
+```{r}
+n.tot <- nrow(genes)
+vals <- table(genes$State)
+
+vals.percent <- vals/n.tot * 100 #put in percentage
+round(vals.percent, 2) #round to 2 sig figs
+```
+
+A first plot of this dataset
+
+```{r}
+p1 <- ggplot(genes) +
+  aes(x=Condition1, y=Condition2, col=State) + #color by state
+  geom_point() +
+ theme_bw() +
+  labs(title="Gene Expression Changes Upon Drug Treatment",
+       x="Control Expression",
+       y="Drug Presence Expression") +
+  scale_colour_manual(values=c("blue","gray","red"))
+p1 + theme_minimal()
+```
+Points on the diagonal = no difference in condition before and after drug treatment
+
+## Going Further
+
+```{r}
+url <- "https://raw.githubusercontent.com/jennybc/gapminder/master/inst/extdata/gapminder.tsv"
+
+gapminder <- read.delim(url)
+```
+
+Make gapminder plot for year 2007:
+
+```{r}
+library(gapminder)
+library(dplyr)
+gapminder_2007 <- gapminder %>% filter(year==2007)
+ggplot(gapminder_2007) +
+  aes(x=gdpPercap, y=lifeExp, color = continent, size=pop) + #color by continent and make size of dot relative to value
+  geom_point(alpha=0.8) + #makes point less bold
+  scale_size_area(max_size = 10) #scales size more so that it is easier to see a difference
+```
+
+Make plot for year 1957:
+
+```{r}
+gapminder_1957 <- gapminder %>% filter(year==1957)
+ggplot(gapminder_1957) + 
+    aes(x=gdpPercap, y=lifeExp, color = continent, size=pop) +
+    geom_point(alpha = 0.7) +
+    scale_size_area(max_size = 15)
+```
+
+Make plot for both 1957 and 2007:
+
+```{r}
+gapminder_both <- gapminder %>% filter(year==1957 | year==2007)
+  ggplot(gapminder_both) + 
+  geom_point(aes(x = gdpPercap, y = lifeExp, color=continent,
+                 size = pop), alpha=0.7) + 
+  scale_size_area(max_size = 10) +
+  facet_wrap(~year) #puts graphs next to each other
+```

@@ -1,0 +1,59 @@
+---
+title: "Class 11: AlphaFold Analysis"
+author: "Carly Chang"
+format: pdf
+---
+
+Here we analyze our AlphaFold structure prediction models. The input directory/folder comes from the ColabFold server: 
+
+```{r}
+# Change this for YOUR results dir name - HIV protease monomer sequence
+results_dir <- "hivpr_monomer_23119" 
+```
+
+```{r}
+# File names for all PDB models
+pdb_files <- list.files(path=results_dir,
+                        pattern="*.pdb",
+                        full.names = TRUE)
+
+# Print our PDB file names
+basename(pdb_files)
+```
+
+I will use the Bio3D package for analysis
+```{r}
+library(bio3d)
+```
+
+
+Align and superpose
+```{r}
+pdbs <- pdbaln(pdb_files, fit=TRUE, exefile="msa")
+pdbs
+```
+
+```{r}
+pc <- pca(pdbs)
+plot(pc)
+```
+
+## RMSD analysis
+RMSD is a common measure of structural distance used in structural biology
+```{r}
+rd <- rmsd(pdbs, fit=T)
+rd
+```
+
+```{r}
+range(rd)
+```
+
+```{r}
+library(pheatmap)
+
+colnames(rd) <- paste0("m",1:5)
+rownames(rd) <- paste0("m",1:5)
+pheatmap(rd)
+```
+
