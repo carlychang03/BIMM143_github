@@ -17,7 +17,7 @@ This is my repository for my Bioinformatics class [BIMM143](https://bioboot.gith
 **Class 09:** [Halloween Candy Mini-Project](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class09)  
 **Class 10:** [Structural Bioinformatics: Analyzing Protein Structure and Function](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class10)  
 **Class 11:** [Structural Bioinformatics: AlphaFold](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class11)  
-**Class 12:** [Genome Informatics (Online Class)]()  
+**Class 12:** [Genome Informatics (Online Class)](https://github.com/carlychang03/BIMM143_github/tree/cc70212f82a1f13437b1d6870ae02139d92f1798/Class12)  
 **Class 13:** [Transcriptomics and RNA-Seq Analysis](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class13)  
 **Class 14:** [RNA-Seq Analysis Mini Project](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class14)  
 **Class 16:** [Essential UNIX for Bioinformatics](https://github.com/carlychang03/BIMM143_github/tree/e2394c42505515fce32877c52174b8c87d055dbe/Class16)  
