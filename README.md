@@ -30,10 +30,10 @@ Class 13 - [Transcriptomics and RNA-Seq Analysis](https://github.com/carlychang0
 
 Class 14 - [RNA-Seq Analysis Minin Project](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class14)
 
-Class 16 - [Essential UNIX for bioiinformatics]()
+Class 16 - [Essential UNIX for bioiinformatics](https://github.com/carlychang03/BIMM143_github/tree/e2394c42505515fce32877c52174b8c87d055dbe/Class16)
 
-Class 17 - [Analyzing Sequencing Data in the Cloud]()
+Class 17 - [Analyzing Sequencing Data in the Cloud](https://github.com/carlychang03/BIMM143_github/tree/e2394c42505515fce32877c52174b8c87d055dbe/Class17)
 
-Class 18 - [Mini Project: Investigating Pertussis Resurgence]()
+Class 18 - [Mini Project: Investigating Pertussis Resurgence](https://github.com/carlychang03/BIMM143_github/tree/e2394c42505515fce32877c52174b8c87d055dbe/Class18)
 
-Class 19 - [Mini Project: Cancer Mutation Analysis]()
+Class 19 - [Mini Project: Cancer Mutation Analysis](https://github.com/carlychang03/BIMM143_github/tree/e2394c42505515fce32877c52174b8c87d055dbe/Class19)
