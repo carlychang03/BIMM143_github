@@ -4,6 +4,7 @@ My classwork from W25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC Sa
 
 ## Index of Material
 Introductory Material: Working with R
+
 Class 4: [Bioinformatics Data Analysis with R: Creating R Functions](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class04)
 
 Class 5: [Data Exploration and Visualization in R](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class05)
@@ -11,6 +12,7 @@ Class 5: [Data Exploration and Visualization in R](https://github.com/carlychang
 Class 6:[R Packages, working with CRAN, and working with Bioconductor](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class06)
 
 Using R and Other Tools for Bioinformatics Analysis
+
 Class: 7: [An Introduction to Machine Learning: K-means, Heriarchical Clustering, PCA](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class07)
 
 Class 8: [Analyzing High Dimensional Datasets and Unsupervised Learning](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class08)
