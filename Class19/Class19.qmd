@@ -1,0 +1,51 @@
+---
+title: "Class 19: Mini Project: Cancer Mutation Analysis"
+author: "Carly Chang (A16843962)"
+format: html
+---
+
+```{r}
+library(bio3d)
+s <- read.fasta("A16843962_mutant_seq.fa")
+s
+```
+
+Score conservation per position
+```{r}
+score <- conserv(s)
+positions <- which(score != 1) #The sites where amino acids/residues differ (not 1) are the caner specific mutations
+positions
+s$ali[,positions]
+```
+
+Read in Alpha3 CIF model and export a PDB for FTMap
+
+```{r}
+cif.file <- "structures_2025-3-15-0-13-12/420844ef1ff4db7.cif"
+x <- read.cif(cif.file)
+write.pdb(x,file="AF_model.pdb")
+```
+
+```{r}
+cif.file <- "structures_2025-3-15-0-13-12/420844ef1ff4db7_2.cif"
+x <- read.cif(cif.file)
+write.pdb(x,file="AF_model_2.pdb")
+```
+
+```{r}
+cif.file <- "structures_2025-3-15-0-13-12/420844ef1ff4db7_3.cif"
+x <- read.cif(cif.file)
+write.pdb(x,file="AF_model_3.pdb")
+```
+
+```{r}
+cif.file <- "structures_2025-3-15-0-13-12/420844ef1ff4db7_4.cif"
+x <- read.cif(cif.file)
+write.pdb(x,file="AF_model_4.pdb")
+```
+
+```{r}
+cif.file <- "structures_2025-3-15-0-13-12/420844ef1ff4db7_5.cif"
+x <- read.cif(cif.file)
+write.pdb(x,file="AF_model_5.pdb")
+```
