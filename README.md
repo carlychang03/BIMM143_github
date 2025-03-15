@@ -1,7 +1,9 @@
 # Bioinformatics Class
+
 This is my repository for my Bioinformatics class [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC San Diego in W25.
 
 ## Index of Material
+
 Introductory Material: Working with R
 
 Class 4 - [Bioinformatics Data Analysis with R: Creating R Functions](https://github.com/carlychang03/BIMM143_github/tree/dd27c0fcdf473ad2b8273e3947e8d32407e56598/Class04)
